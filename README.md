@@ -152,5 +152,35 @@ d. Access the application by navigating to `http://localhost:8080 `in your web b
    - Endpoint: `/api/ocr/search`
    - Request Body: keyword (string) and extractedText (string)
    - Response: Search results (text)
+### Troubleshooting
+- Issue: Tesseract is not found
+  - Ensure the Tesseract path is correctly set in the environment variables (TESSDATA_PREFIX and TESSERACT_PATH).
+  -  Verify the Variable:
+   Open a new Command Prompt window and type:
+  
+   ```
+   echo %TESSDATA_PREFIX%
+   ```
+- Issue: Image is not uploading
+   - Check if the file size is within the allowed limits.
+   - Ensure the backend API `/api/ocr/upload` is running and accessible.
+   - Ensure file size is aligned according `application.properties` file check once and update accordingly.
+### Conclusion
+This project demonstrates a complete OCR and Document Search web application that allows users to upload images, extract text using OCR, and perform keyword searches within the extracted text. The application is built with Spring Boot, Java, and Bootstrap for a clean and responsive frontend. By following the setup instructions and deploying the application using Docker, you can easily run the project in any environment with minimal configuration.
 
- 
+### Contributions
+We welcome contributions from the open-source community! If you'd like to improve this project, follow these steps:
+
+- Fork the repository from GitHub.
+- Clone your forked repository locally
+- Create a new feature branch
+- Commit your changes
+- Push the branch to your forked repo:
+- Create a Pull Request on the main repository.
+
+All contributions—big or small—are highly appreciated! Feel free to improve the documentation, fix bugs, or add new features.\
+
+### Getting Help
+ Feel free to reach out to  <a href="mailto:deepsinghkumar01@gmail.com" target="_blank"> Mail</a> or via GitHub issues or discussions.
+
+### Thank you for using and contributing to OCR and Document Search! Happy coding!
