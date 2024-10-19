@@ -46,11 +46,10 @@ Ensure you have the following installed:
   - Simple extract the folder
   - Go to this path ```C:\Program Files\Tess4J-3.4.8-src\Tess4J\tessdata"``` || slected folder `tessdata` /path_to_tessdata_folder
   - select ```"C:\Program Files\Tess4J-3.4.8-src\Tess4J\tessdata"``` || path_to_tessdata_folder
-### After that
 
-Set the TESSDATA_PREFIX Environment Variable
-
-- Ensure you set the TESSDATA_PREFIX to the directory containing the tessdata folder. Here’s how you can do it:
+3. Set the TESSDATA_PREFIX Environment Variable
+ 
+ Ensure you set the TESSDATA_PREFIX to the directory containing the tessdata folder. Here’s how you can do it:
 
  1. Windows Command Prompt:
   ```
@@ -68,9 +67,9 @@ Set the TESSDATA_PREFIX Environment Variable
   ```
  - This will display the languages that are installed and recognized by Tesseract.
 
-### To set the TESSDATA_PREFIX environment variable on Windows, you can follow these steps:
+3.1  To set the TESSDATA_PREFIX environment variable on Windows, you can follow these steps:
 
-Setting TESSDATA_PREFIX in Windows
+Setting `TESSDATA_PREFIX` in Windows
 
 - Open System Properties:
   - Right-click on the This PC or My Computer icon on your desktop or in File Explorer.
@@ -95,4 +94,42 @@ Setting TESSDATA_PREFIX in Windows
    echo %TESSDATA_PREFIX%
    ```
    - This should display the path you set.
+      
+4. Backend Setup
+   
+a. Update path in `AppConstants.java` according to your path of `tessdata`
+      Example: 
+      
+       public static final String PATH ="C:\\MyProj\\ORC-Reader\\Tess4J-3.4.8-src\\Tess4J\\tessdata"; //path_to_tessdata_folder
+b. Install Java dependencies
+  Navigate to the project directory and run:
+   ```
+     mvn clean install   
+  ```
+c. Start the Spring Boot Application
+ Run the application with:
+   ``` 
+     mvn spring-boot:run
+   ```
+d. Access the application by navigating to `http://localhost:8080 `in your web browser.
+
+### Use Cases
+1. Upload Image and Extract Text
+ Users can upload an image, and the OCR system will extract text from the image and display it in a text area.
+2. Keyword Search in Extracted Text
+ After the text is extracted, users can search for specific keywords in the extracted text. The matching words will be highlighted in the search results section.
+3. Copy Extracted Text
+ Users can click the “Copy” button to copy the entire extracted text to their clipboard for further use.
+### API Endpoints
+- Image Upload and OCR Extraction
+   - Method: `POST`
+   - Endpoint: `/api/ocr/upload`
+   - Request Body: Image file
+   - Response: Extracted text in JSON format.
+- Search in Extracted Text
+   - Method: `POST`
+   - Endpoint: `/api/ocr/search`
+   - Request Body: keyword (string) and extractedText (string)
+   - Response: Search results (text)
+
  
