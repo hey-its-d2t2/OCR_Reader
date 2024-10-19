@@ -15,11 +15,36 @@ The OCR and Document Search Web Application is designed to extract text from upl
   - Apache PDFBox for handling image files and adjusting DPI.
   - Lombok to reduce boilerplate code and improve readability.
   - SLF4J for logging purposes.
-  - Thymeleaf for rendering frontend
+  - Thymeleaf for rendering frontend.
+  - IntelliJ IDEA for Development enviroment.
 ### Prerequisites
 Ensure you have the following installed:
+- Java 8 or higher, this is built on Java 17 and Spring boot version 3.3.4
+- Maven (for dependency management)
+- Tesseract OCR (Install locally for OCR functionality)
 
-Java 8 or higher
-Maven (for dependency management)
-Node.js (optional, for frontend development)
-Tesseract OCR (Install locally for OCR functionality)
+### Setup Instructions
+
+1. Clone the Repository
+
+   ```
+     git clone https://github.com/hey-its-d2t2/OCR_Reader.git
+     cd OCR_Reader
+   ```
+2. Install Tesseract OCR
+ - The first step is to download the Tess4J API from the link
+    ```https://sourceforge.net/projects/tess4j/```
+ - Extract the Files from the downloaded file 
+ - Open your IDE and make a new project
+ - Link the jar file with your project. Refer this link .
+    ```https://www.edureka.co/community/4028/how-to-import-a-jar-file-in-eclipse```   
+ - Please migrate via this path “..\Tess4J-3.4.8-src\Tess4J\dist”.
+ ### OR
+  - Read the Article from link
+     ````https://www.geeksforgeeks.org/tesseract-ocr-with-java-with-examples/````
+ ### OR
+  - Simple extract the folder
+  - Go to this path ```C:\Program Files\Tess4J-3.4.8-src\Tess4J\tessdata"``` || slected folder `tessdata` /path_to_tessdata_folder
+  - select ```"C:\Program Files\Tess4J-3.4.8-src\Tess4J\tessdata"``` || path_to_tessdata_folder
+  - 
+ 
