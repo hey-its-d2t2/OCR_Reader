@@ -23,6 +23,27 @@ Ensure you have the following installed:
 - Maven (for dependency management)
 - Tesseract OCR (Install locally for OCR functionality)
 
+### Sample Inputs and Outputs
+- Input 1: Image Upload (OCR)
+  - Uploaded Image: Image with text such as a scanned document.
+  - Extracted Text: The text extracted from the uploaded image will appear in the text area.
+- Input 2: Search Keyword
+  - Keyword: "Invoice"
+  - Search Result: Found || Not Found
+### Screenshots
+1. Home Page
+ 
+   ![OCR and Document Search - localhost](https://github.com/user-attachments/assets/b038aee9-ec7d-48b7-9e1c-9410547c8abf)
+
+2. Upload Image and Extract Text, Extracted Text Display
+
+ - Hindi
+   ![FireShot Capture 036 - OCR and Document Search - localhost](https://github.com/user-attachments/assets/9b3004ce-5a54-49c4-9cc6-e395fa59edbf)
+
+ - English
+ 
+ ![FireShot Capture 037 - OCR and Document Search - localhost](https://github.com/user-attachments/assets/ab8103d7-1aa6-4f2e-a0e3-ca1c3c5ad1e0)
+
 ### Setup Instructions
 
 1. Clone the Repository
