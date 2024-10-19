@@ -46,5 +46,53 @@ Ensure you have the following installed:
   - Simple extract the folder
   - Go to this path ```C:\Program Files\Tess4J-3.4.8-src\Tess4J\tessdata"``` || slected folder `tessdata` /path_to_tessdata_folder
   - select ```"C:\Program Files\Tess4J-3.4.8-src\Tess4J\tessdata"``` || path_to_tessdata_folder
-  - 
+### After that
+
+Set the TESSDATA_PREFIX Environment Variable
+
+- Ensure you set the TESSDATA_PREFIX to the directory containing the tessdata folder. Here’s how you can do it:
+
+ 1. Windows Command Prompt:
+  ```
+   set TESSDATA_PREFIX=D:\path\to\tessdata\
+  ```
+2. Linux/Mac Terminal:
+  ```
+  export TESSDATA_PREFIX=/path/to/tessdata/
+  ```
+3. List Available Languages
+ 
+  - You can list the available languages supported by Tesseract using the following command in the terminal or command prompt:
+  ```
+   tesseract --list-langs
+  ```
+ - This will display the languages that are installed and recognized by Tesseract.
+
+### To set the TESSDATA_PREFIX environment variable on Windows, you can follow these steps:
+
+Setting TESSDATA_PREFIX in Windows
+
+- Open System Properties:
+  - Right-click on the This PC or My Computer icon on your desktop or in File Explorer.
+  - Select Properties.
+  - Click on Advanced system settings on the left side.
+  - In the System Properties window, go to the Advanced tab.
+  - Environment Variables:
+    - Click on the Environment Variables button at the bottom of the window.
+    - Create a New `System Variable`:
+      - In the System variables section, click on New.
+      - In the Variable name field, enter `TESSDATA_PREFIX`.
+      - In the Variable value field, enter the path to your tessdata directory. For example:
+       ```"C:\Program Files\Tess4J-3.4.8-src\Tess4J\tessdata"```
+      - Click OK to save the new variable.
+      - Close All Windows:
+
+  - Click OK in the Environment Variables window and in the System Properties window to apply your changes.
+- Verify the Variable:
+- Open a new Command Prompt window and type:
+  
+   ```
+   echo %TESSDATA_PREFIX%
+   ```
+   - This should display the path you set.
  
