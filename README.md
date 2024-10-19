@@ -41,8 +41,7 @@ Ensure you have the following installed:
    ![FireShot Capture 036 - OCR and Document Search - localhost](https://github.com/user-attachments/assets/9b3004ce-5a54-49c4-9cc6-e395fa59edbf)
 
  - English
- 
- ![FireShot Capture 037 - OCR and Document Search - localhost](https://github.com/user-attachments/assets/ab8103d7-1aa6-4f2e-a0e3-ca1c3c5ad1e0)
+  ![FireShot Capture 037 - OCR and Document Search - localhost](https://github.com/user-attachments/assets/ab8103d7-1aa6-4f2e-a0e3-ca1c3c5ad1e0)
 
 ### Setup Instructions
 
@@ -178,7 +177,7 @@ We welcome contributions from the open-source community! If you'd like to improv
 - Push the branch to your forked repo:
 - Create a Pull Request on the main repository.
 
-All contributions—big or small—are highly appreciated! Feel free to improve the documentation, fix bugs, or add new features.\
+All contributions—big or small—are highly appreciated! Feel free to improve the documentation, fix bugs, or add new features.
 
 ### Getting Help
  Feel free to reach out to  <a href="mailto:deepsinghkumar01@gmail.com" target="_blank"> Mail</a> or via GitHub issues or discussions.
