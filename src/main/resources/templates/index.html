@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCR and Document Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            background-color: #f0f4f8;
         }
         .container {
-            max-width: 600px;
+            max-width: 850px;
             margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
+
+        h4 {
             text-align: center;
+            color: #0056b3;
+            font-size: 18px; /* Reduced font size */
         }
         form {
             margin-bottom: 20px;
         }
         textarea {
             width: 100%;
-            height: 150px;
+            height: 300px;
             margin-bottom: 20px;
             padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
+            font-size: 18px;
+            border: 1px solid #007bff;
             border-radius: 4px;
             resize: none;
         }
         input[type="text"] {
-            width: calc(100% - 100px);
+            width: calc(100% - 120px);
             padding: 8px;
             margin-right: 10px;
             font-size: 14px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
         }
         button {
             padding: 10px 20px;
@@ -42,38 +52,69 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 5px 0;
         }
         button:hover {
             background-color: #0056b3;
+            transform: translateY(-1px);
         }
         .search-results {
             margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            background-color: #0056b3;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .clear-button {
+            background-color: #dc3545;
+        }
+        .clear-button:hover {
+            background-color: #c82333;
+        }
+        .copy-button {
+            background-color: #28a745; /* Bootstrap success color */
+        }
+        .copy-button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>OCR and Document Search</h1>
 
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">🖼️ OCR and Document Search</a>
+</nav>
+
+<div class="container">
     <!-- Image Upload Form -->
     <form id="uploadForm">
         <label for="imageFile">Upload an Image for OCR:</label>
         <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
         <button type="button" onclick="uploadImage()">Extract Text</button>
+        <button type="button" class="clear-button" onclick="clearFields()">Clear</button>
+        <button type="button" class="copy-button" onclick="copyToClipboard()">Copy</button>
     </form>
 
     <!-- Display Extracted Text -->
-    <h2>Extracted Text</h2>
+    <h4>Extracted Text</h4>
     <textarea id="extractedText" readonly></textarea>
 
     <!-- Search Functionality -->
-    <h2>Search in Extracted Text</h2>
+    <h4>Search in Extracted Text</h4>
     <input type="text" id="keyword" placeholder="Enter keyword to search" required>
     <button type="button" onclick="searchText()">Search</button>
 
     <!-- Search Results -->
     <div class="search-results">
-        <h3>Search Results</h3>
+        <h4>Search Results</h4>
         <p id="searchResults"></p>
     </div>
 </div>
@@ -121,6 +162,26 @@
                 console.error('Error:', error);
             });
     }
+
+    // Function to clear fields
+    function clearFields() {
+        document.getElementById('imageFile').value = '';
+        document.getElementById('extractedText').value = '';
+        document.getElementById('keyword').value = '';
+        document.getElementById('searchResults').innerText = '';
+    }
+
+    // Function to copy extracted text to clipboard
+    function copyToClipboard() {
+        const extractedText = document.getElementById('extractedText');
+        extractedText.select();
+        document.execCommand('copy');
+        alert('Extracted text copied to clipboard!');
+    }
 </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
