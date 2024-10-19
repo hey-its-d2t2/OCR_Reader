@@ -44,10 +44,14 @@ public class OCRServiceImpl implements OCRService {
 
     @Override
     public String searchInText(String extractedText, String keyword) {
-        if (extractedText != null && extractedText.contains(keyword)) {
-            return "Keyword found!";
+        if (extractedText != null && keyword != null && !keyword.isEmpty()) {
+            if (extractedText.contains(keyword)) {
+                return "Keyword found!";
+            } else {
+                return "Keyword not found.";
+            }
         }
-        return "Keyword not found.";
+        return "Invalid search input.";
     }
 
 }
