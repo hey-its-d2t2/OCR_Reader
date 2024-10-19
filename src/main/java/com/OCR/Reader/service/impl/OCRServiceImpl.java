@@ -1,6 +1,6 @@
 package com.OCR.Reader.service.impl;
 
-import com.OCR.Reader.config.OCRProcessor;
+import com.OCR.Reader.util.OCRProcessor;
 import com.OCR.Reader.constants.AppConstants;
 import com.OCR.Reader.pojo.OCRResult;
 import com.OCR.Reader.service.OCRService;
